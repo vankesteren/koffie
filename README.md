@@ -1,4 +1,4 @@
 # koffie
 webappje
 
-ga naar [de github page](vankesteren.github.io/koffie) voor een live versie
+ga naar [de github page](https://vankesteren.github.io/koffie) voor een live versie
