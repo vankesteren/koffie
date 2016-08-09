@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!---
+    Dit laadt alle scripts uit de assets folder. Als alternatief (altijd up-to-date)
+    kun je deze files ook direct van de webservers van de ontwikkerlaars halen.
+    --->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+
+    <!--- Title in the browser header --->
+    <title>Koffie</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+
+  <body>
+    <!--- Meest basic navbar. Bekijk vooral voorbeelden voor responsiveness--->
+    <div class="navbar">
+      <div class="container text-primary text-center">
+        <h1 class="text-danger">Hello World!</h1>
+        <br/>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="main">
+        <div class="container">
+          <!---
+          Deze container heeft een tabel, gevuld per rij (class="row"). Iedere rij
+          heeft 12 kolommen die reageren op basis van de breedte van de viewport
+          (browser window). col-xs houdt in dat zelfs op kleine schermen de kolommen
+          nog naast elkaar staan. col-lg houdt in dat dit alléén op de grootste
+          schermen zo is.
+          --->
+          <div class="row">
+            <div class="container col-xs-2 col-sm-offset-5 col-xs-2 col-xs-offset-5">
+              <img class="img-rounded" src="assets/goats.jpg" width="100%"></img>
+            </div>
+          </div>
+          <div class = "row"><br/><br/></div> <!--- dit is ongetwijfeld niet de meest nette manier van spacing :p <br/> staat voor line break--->
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+              <div class="input-group">
+                <span class="input-group-addon">Wachtwoord: </span>
+                <input name="passwd" type="text" value="secret" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class = "row"><br/></div>
+          <div class = "row">
+            <div class="col-sm-12 text-center">
+              <div class="btn btn-primary" onclick="$('#jquery-identifier').append('HAAHAHAHAHAHAHAAA <br />');">
+                Klik hier
+              </div>
+            </div>
+          </div>
+          <div class = "row"><br/></div>
+          <div class = "row">
+            <div class="col-sm-offset-3 col-sm-6 text-center"> <!--- offset 3 + col 6 = 9, dus de kolom zal in het midden staan --->
+              <p>
+                Hier komt wat mooie text en dat is natuurlijk heel fijn. Hallo wereld of iets dergelijks. Probeer de window maar eens te resizen,
+                dan zul je zien wat <code> col-sm-offset-3 </code> en <code> col-sm-6 </code> doen!
+              </p>
+              <p id="jquery-identifier">
+                Oh! Vergeet niet <code> F12 </code> te klikken om het DOM (document object model) te bekijken bij het klikken van de button hierboven. Verder kun je met jQuery tekst toevoegen zoals dit:
+              </p>
+            </div>
+          </div>
+          <div class = "row"><br/></div>
+          <div class = "row">
+            <div class="col-sm-12 text-center">
+                <input type="button" class="btn btn-danger" value="blabla" id="do_embed">
+                <input type="button" class="btn btn-danger" value="blablabla" id="do_extract">
+            </div>
+          </div>
+          <div class = "row"><br/><br/></div>
+          <div class = "row">
+            <div id="outputdiv" class = "container col-sm-12 text-center">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
