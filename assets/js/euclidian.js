@@ -17,7 +17,7 @@ var euclid = function(){
     .append("<p>"+JSON.stringify(closest)+"</p>");
 }
 
-function sortJSON(data, key, way) {
+var sortJSON = function(data, key, way) {
     return data.sort(function(a, b) {
         var x = a[key]; var y = b[key];
         if (way === '123' ) { return ((x < y) ? -1 : ((x > y) ? 1 : 0)); }
