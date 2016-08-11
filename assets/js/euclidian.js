@@ -17,7 +17,7 @@ var euclid = function(){
                parseInt($("#var4").val()) || 0];
 
 
-  $("#output-block").html("<h1>"+data+"</h1>");
+  $("#output-block").html("<h1>"+JSON.stringify(input)+"</h1>");
   for (var i=0; i<json.length; i++){
     console.log(i);
   }
