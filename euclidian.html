@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+    Dit laadt alle scripts uit de assets folder. Als alternatief (altijd up-to-date)
+    kun je deze files ook direct van de webservers van de ontwikkelaars halen.
+    -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+
+    <!-- Title in the browser header -->
+    <title>Koffie</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <!-- Meest basic navbar. Bekijk vooral voorbeelden voor responsiveness-->
+    <div class="navbar">
+      <div class="container text-primary text-center">
+        <h1 class="text-danger">Hello World!</h1>
+        <br/>
+      </div>
+    </div>
+    <div class="main">
+      <div class="container">
+        <div class="help-block"></div>
+        <div class="row">
+          <div class="col-md-3">
+            <input name="var1" id="var1" type="number" class="form-control" placeholder="var1">
+          </div>
+          <div class="col-md-3">
+            <input name="var2" id="var2" type="number" class="form-control" placeholder="var2">
+          </div>
+          <div class="col-md-3">
+            <input name="var3" id="var3" type="number" class="form-control" placeholder="var3">
+          </div>
+          <div class="col-md-3">
+            <input name="var4" id="var4" type="number" class="form-control" placeholder="var4">
+          </div>
+        </div>
+        <div class="help-block"></div>
+        <div class="row">
+          <div id="output-block" class="col-md-6 col-md-offset-3 text-center"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="assets/js/euclidian.js"></script>
+</html>
