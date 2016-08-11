@@ -18,10 +18,11 @@ var euclid = function(){
 }
 
 var randomise = function(){
-  $("#var1").val() = Math.floor(Math.random() * 10);
-  $("#var2").val() = Math.floor(Math.random() * 10);
-  $("#var3").val() = Math.floor(Math.random() * 10);
-  $("#var4").val() = Math.floor(Math.random() * 10);
+  $("#var1").val(Math.random() * 10);
+  $("#var2").val(Math.random() * 10);
+  $("#var3").val(Math.random() * 10);
+  $("#var4").val(Math.random() * 10);
+  euclid();
 }
 
 var json;
