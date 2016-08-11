@@ -17,6 +17,13 @@ var euclid = function(){
     .append("<p>"+JSON.stringify(closest)+"</p>");
 }
 
+var randomise = function(){
+  $("#var1").val() = Math.floor(Math.random() * 10);
+  $("#var2").val() = Math.floor(Math.random() * 10);
+  $("#var3").val() = Math.floor(Math.random() * 10);
+  $("#var4").val() = Math.floor(Math.random() * 10);
+}
+
 var json;
 
 var htmltext = "The closest value to this is: ";
