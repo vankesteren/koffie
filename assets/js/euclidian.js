@@ -14,7 +14,7 @@ var euclid = function(){
 
   $("#output-block").html("")
     .append("<h1>"+htmltext+closest.name+"</h1>")
-    .append("<p>"+$.stringify(closest)+"</p>");
+    .append("<p>"+JSON.stringify(closest)+"</p>");
 }
 
 var json;
