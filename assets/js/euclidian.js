@@ -6,11 +6,11 @@ var euclid = function(){
 
   $("#output-block").html("<h1>"+JSON.stringify(input)+"</h1>");
   for (var i=0; i<json.length; i++){
-    var compare = $.map(json[i], function(el) { return(el) }).slice(1);
-    dataset[i].dist = Math.sqrt(math.dot(input,compare));
+    var compare = $.map(json[i], function(el) { return(el) }).slice(2);
+    json[i].dist = Math.sqrt(math.dot(input,compare));
   };
 
-  var closest = dataset.sort(function(a,b){return a.dist-b.dist})[1];
+  var closest = json.sort(function(a,b){return a.dist-b.dist})[1];
 
   $("#output-block").html("")
     .append("<h1>"+htmltext+closest.name+"</h1>")
@@ -18,8 +18,6 @@ var euclid = function(){
 }
 
 var json;
-var dataset;
-var out;
 
 var htmltext = "The closest value to this is: ";
 
@@ -30,6 +28,7 @@ $("#var4").on("change", euclid);
 
 $.get("assets/JSON/euclid.txt", function(data){
   json = $.parseJSON(data);
-  dataset = json;
-  out = new Array(json.length).fill(0);
+  for (var i=0; i<json.length; i++){
+    json[i].dist = 0
+  }
 });
