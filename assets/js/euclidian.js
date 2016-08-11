@@ -1,5 +1,4 @@
 var euclid = function(){
-  dataset = json;
   var input = [parseInt($("#var1").val()) || 0,
                parseInt($("#var2").val()) || 0,
                parseInt($("#var3").val()) || 0,
@@ -15,7 +14,7 @@ var euclid = function(){
 
   $("#output-block").html("")
     .append("<h1>"+htmltext+closest.name+"</h1>")
-    .append("<p>"+closest+"</p>");
+    .append("<p>"+$.stringify(closest)+"</p>");
 }
 
 var json;
@@ -31,5 +30,6 @@ $("#var4").on("change", euclid);
 
 $.get("assets/JSON/euclid.txt", function(data){
   json = $.parseJSON(data);
+  dataset = json;
   out = new Array(json.length).fill(0);
 });
