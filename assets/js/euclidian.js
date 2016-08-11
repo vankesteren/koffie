@@ -6,7 +6,7 @@ var euclid = function(){
 
   $("#output-block").html("<h1>"+JSON.stringify(input)+"</h1>");
   for (var i=0; i<json.length; i++){
-    var compare = $.map(json[i], function(el) { return(el) }).slice(2);
+    var compare = $.map(json[i], function(el) { return(el) }).slice(1,-1);
     json[i].dist = Math.sqrt(math.dot(input,compare));
   };
 
