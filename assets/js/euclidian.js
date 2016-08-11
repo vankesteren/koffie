@@ -10,7 +10,7 @@ var euclid = function(){
     json[i].dist = Math.sqrt(math.dot(input,compare));
   };
 
-  var closest = json.sort(function(a,b){return a.dist-b.dist})[1];
+  var closest = json.sort(function(a,b){return a.dist-b.dist})[0];
 
   $("#output-block").html("")
     .append("<h1>"+htmltext+closest.name+"</h1>")
