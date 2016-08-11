@@ -34,7 +34,8 @@ $("#var4").on("change", calculate);
 
 var json;
 var dataset;
-var out = new Array(json.length).fill(0);
+var out;
 $.get("assets/JSON/euclid.txt", function(data){
   json = $.parseJSON(data);
+  out = new Array(json.length).fill(0);
 });
