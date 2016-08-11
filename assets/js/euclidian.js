@@ -16,10 +16,9 @@ var euclid = function(){
                parseInt($("#var3").val()) || 0,
                parseInt($("#var4").val()) || 0];
 
-
   $("#output-block").html("<h1>"+JSON.stringify(input)+"</h1>");
   for (var i=0; i<json.length; i++){
-    console.log(i);
+
   }
 }
 
@@ -30,6 +29,9 @@ $("#var3").on("change", calculate);
 $("#var4").on("change", calculate);
 
 var json;
+var dataset;
 $.get("assets/JSON/euclid.txt", function(data){
-  json = $.parseJSON(data);
+  dataset = $.parseJSON(data);
+  json = $.map(dataset, function(el) { return(el) })
+  console.log(json)
 });
