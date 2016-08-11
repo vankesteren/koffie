@@ -10,11 +10,19 @@ var euclid = function(){
     json[i].dist = Math.sqrt(math.dot(input,compare));
   };
 
-  var closest = json.sort(function(a,b){return a.dist-b.dist})[0];
+  var closest = sortJSON(json,"dist","123")[0];
 
   $("#output-block").html("")
     .append("<h1>"+htmltext+closest.name+"</h1>")
     .append("<p>"+JSON.stringify(closest)+"</p>");
+}
+
+function sortJSON(data, key, way) {
+    return data.sort(function(a, b) {
+        var x = a[key]; var y = b[key];
+        if (way === '123' ) { return ((x < y) ? -1 : ((x > y) ? 1 : 0)); }
+        if (way === '321') { return ((x > y) ? -1 : ((x < y) ? 1 : 0)); }
+    });
 }
 
 var randomise = function(){
