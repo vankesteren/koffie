@@ -12,7 +12,7 @@ var calculate = function(){
 
 
 var euclid = function(){
-  dataset = json
+  dataset = json;
   var input = [parseInt($("#var1").val()) || 0,
                parseInt($("#var2").val()) || 0,
                parseInt($("#var3").val()) || 0,
@@ -20,10 +20,10 @@ var euclid = function(){
 
   $("#output-block").html("<h1>"+JSON.stringify(input)+"</h1>");
   for (var i=0; i<json.length; i++){
-    var compare = $.map(json[i], function(el) { return(el) }).slice(1)
-    dataset[i].push(Math.sqrt(math.dot(input,compare)))
-  }
-  console.log(dataset)
+    var compare = $.map(json[i], function(el) { return(el) }).slice(1);
+    dataset[i].dist = Math.sqrt(math.dot(input,compare));
+  };
+  console.log(dataset);
 }
 
 
@@ -37,5 +37,4 @@ var dataset;
 var out = new Array(json.length).fill(0);
 $.get("assets/JSON/euclid.txt", function(data){
   json = $.parseJSON(data);
-  dataset = json
 });
