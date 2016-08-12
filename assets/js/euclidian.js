@@ -3,11 +3,17 @@ var euclid = function(){
                parseInt($("#var2").val()) || 0,
                parseInt($("#var3").val()) || 0,
                parseInt($("#var4").val()) || 0];
+  var disttype = $("#disttype").val();
 
   for (var i=0; i<json.length; i++){
     var compare = $.map(json[i], function(el) { return(el) }).slice(1,-1);
     var diff = math.subtract(input,compare);
-    json[i].dist = Math.sqrt(math.dot(diff,diff));
+    if (disttype == "l2"){
+      json[i].dist = Math.sqrt(math.dot(diff,diff));
+    } else {
+      json[i].dist = math.sum(math.abs(diff));
+    }
+
   }
 
   var closest = sortJSON(json,"dist")[0];
