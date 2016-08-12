@@ -46,6 +46,6 @@ $("#var4").on("change", euclid);
 $.get("assets/JSON/euclidbig.txt", function(data){
   json = $.parseJSON(data);
   for (var i=0; i<json.length; i++){
-    json.dist=0;
+    json[i].dist=0;
   }
 });
