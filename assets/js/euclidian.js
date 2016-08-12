@@ -4,14 +4,12 @@ var euclid = function(){
                parseInt($("#var3").val()) || 0,
                parseInt($("#var4").val()) || 0];
 
-  var clone = json.slice(0)
-
-  for (var i=0; i<clone.length; i++){
-    var compare = $.map(clone[i], function(el) { return(el) }).slice(1);
-    clone[i].dist = Math.sqrt(math.dot(input,compare));
+  for (var i=0; i<json.length; i++){
+    var compare = $.map(json[i], function(el) { return(el) }).slice(1,-1);
+    json[i].dist = Math.sqrt(math.dot(input,compare));
   }
 
-  var closest = sortJSON(clone,"dist")[0];
+  var closest = sortJSON(json,"dist")[0];
 
   $("#output-block").html("")
     .append("<h1>"+htmltext+closest.name+"</h1>")
@@ -46,4 +44,7 @@ $("#var4").on("change", euclid);
 // load the dataset after everything else is loaded
 $.get("assets/JSON/euclidbig.txt", function(data){
   json = $.parseJSON(data);
+  for (var i=0; i<json.length; i++){
+    json.dist=0;
+  }
 });
