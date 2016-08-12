@@ -40,17 +40,15 @@ var randomise = function(){
 }
 
 // To make a table from the json output
-var tbler = function(data) {
-    var tbl_body = "";
-    var odd_even = false;
-    $.each(data, function() {
-        var tbl_row = "";
-        $.each(this, function(k , v) {
-            tbl_row += "<td>"+v+"</td>";
-        })
-        tbl_body += "<tr class=\""+( odd_even ? "odd" : "even")+"\">"+tbl_row+"</tr>";
-        odd_even = !odd_even;
-    })
+var tbler = function(entry) {
+    tbl_body = '<table><tr><th>Field</th><th>Value</th></tr><tr><th>Name</th><th>'+
+    entry.name+'</th></tr><tr><td>Distance</td><td>'+
+    entry.dist+'</td></tr><tr><td>Var1</td><td>'+
+    entry.var1+'</td></tr><tr><td>Var2</td><td>'+
+    entry.var2+'</td></tr><tr><td>Var3</td><td>'+
+    entry.var3+'</td></tr><tr><td>Var4</td><td>'+
+    entry.var4+'</td></tr></table>';
+
     return tbl_body;
 }
 
