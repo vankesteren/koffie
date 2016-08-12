@@ -47,7 +47,7 @@ $("#var1").on("change", euclid);
 $("#var2").on("change", euclid);
 $("#var3").on("change", euclid);
 $("#var4").on("change", euclid);
-$("#disttype").on("change", euclid);
+$("#disttype").bind("DOMSubtreeModified",euclid);
 
 // load the dataset after everything else is loaded
 $.get("assets/JSON/euclidbig.txt", function(data){
