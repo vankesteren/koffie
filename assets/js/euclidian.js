@@ -4,24 +4,24 @@ var euclid = function(){
                parseInt($("#var3").val()) || 0,
                parseInt($("#var4").val()) || 0];
 
-  $("#output-block").html("<h1>"+JSON.stringify(input)+"</h1>");
-  for (var i=0; i<json.length; i++){
-    var compare = $.map(json[i], function(el) { return(el) }).slice(1,-1);
-    json[i].dist = Math.sqrt(math.dot(input,compare));
-  };
+  var clone = json.slice(0)
 
-  var closest = sortJSON(json,"dist","123")[0];
+  for (var i=0; i<json.length; i++){
+    var compare = $.map(clone[i], function(el) { return(el) }).slice(1);
+    clone[i].dist = Math.sqrt(math.dot(input,compare));
+  }
+
+  var closest = sortJSON(clone,"dist")[0];
 
   $("#output-block").html("")
     .append("<h1>"+htmltext+closest.name+"</h1>")
     .append("<p>"+JSON.stringify(closest)+"</p>");
 }
 
-var sortJSON = function(data, key, way) {
+var sortJSON = function(data, key) {
     return data.sort(function(a, b) {
         var x = a[key]; var y = b[key];
-        if (way === '123' ) { return ((x < y) ? -1 : ((x > y) ? 1 : 0)); }
-        if (way === '321') { return ((x > y) ? -1 : ((x < y) ? 1 : 0)); }
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
     });
 }
 
@@ -44,7 +44,4 @@ $("#var4").on("change", euclid);
 
 $.get("assets/JSON/euclid.txt", function(data){
   json = $.parseJSON(data);
-  for (var i=0; i<json.length; i++){
-    json[i].dist = 0
-  }
 });
