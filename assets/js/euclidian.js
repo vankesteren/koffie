@@ -20,7 +20,7 @@ var euclid = function(){
 
   $("#output-block").html("")
     .append("<h1>"+htmltext+closest.name+"</h1>")
-    .append("<p>"+tbler(closest)+"</p>");
+    .append('<p class = "text-center">'+tbler(closest)+"</p>");
 }
 
 var sortJSON = function(data, key) {
@@ -41,9 +41,9 @@ var randomise = function(){
 
 // To make a table from the json output
 var tbler = function(entry) {
-    tbl_body = '<table><tr><th>Field</th><th>Value</th></tr><tr><th>Name</th><th>'+
-    entry.name+'</th></tr><tr><td>Distance</td><td>'+
-    entry.dist+'</td></tr><tr><td>Var1</td><td>'+
+    tbl_body = '<table><tr><th>Field</th><th>Value</th></tr><tr><td>Name</td><td>'+
+    entry.name+'</td></tr><tr><td>Distance</td><td>'+
+    Math.round(entry.dist*100)/100+'</td></tr><tr><td>Var1</td><td>'+
     entry.var1+'</td></tr><tr><td>Var2</td><td>'+
     entry.var2+'</td></tr><tr><td>Var3</td><td>'+
     entry.var3+'</td></tr><tr><td>Var4</td><td>'+
