@@ -19,8 +19,8 @@ var euclid = function(){
   var closest = sortJSON(json,"dist")[0];
 
   $("#output-block").html("")
-    .append("<h1>"+htmltext+closest.name+"</h1>")
-    .append('<p class = "text-center">'+tbler(closest)+"</p>");
+    .append('<h1 class="text-center">'+htmltext+closest.name+"</h1>")
+    .append('<p>'+tbler(closest)+"</p>");
 }
 
 var sortJSON = function(data, key) {
