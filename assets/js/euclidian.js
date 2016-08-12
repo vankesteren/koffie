@@ -41,13 +41,13 @@ var randomise = function(){
 
 // To make a table from the json output
 var tbler = function(entry) {
-    tbl_body = '<table class="table-hover"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Name</td><td>'+
+    tbl_body = '<div><table class="table table-hover"><thead><tr><th>Field</th><th>Value</th></tr></thead><tbody><tr><td>Name</td><td>'+
     entry.name+'</td></tr><tr><td>Distance</td><td>'+
     Math.round(entry.dist*100)/100+'</td></tr><tr><td>Var1</td><td>'+
     entry.var1+'</td></tr><tr><td>Var2</td><td>'+
     entry.var2+'</td></tr><tr><td>Var3</td><td>'+
     entry.var3+'</td></tr><tr><td>Var4</td><td>'+
-    entry.var4+'</td></tr></tbody></table>';
+    entry.var4+'</td></tr></tbody></table></div>';
 
     return tbl_body;
 }
