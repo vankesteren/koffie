@@ -3,12 +3,12 @@ var euclid = function(){
                parseInt($("#var2").val()) || 0,
                parseInt($("#var3").val()) || 0,
                parseInt($("#var4").val()) || 0];
-  var disttype = $("#disttype").val();
+  var disttype = $("#disttype").html();
 
   for (var i=0; i<json.length; i++){
     var compare = $.map(json[i], function(el) { return(el) }).slice(1,-1);
     var diff = math.subtract(input,compare);
-    if (disttype == "l2"){
+    if (disttype == "Euclidian Distance"){
       json[i].dist = Math.sqrt(math.dot(diff,diff));
     } else {
       json[i].dist = math.sum(math.abs(diff));
@@ -47,6 +47,7 @@ $("#var1").on("change", euclid);
 $("#var2").on("change", euclid);
 $("#var3").on("change", euclid);
 $("#var4").on("change", euclid);
+$("#disttype").on("change", euclid);
 
 // load the dataset after everything else is loaded
 $.get("assets/JSON/euclid.txt", function(data){
