@@ -50,7 +50,7 @@ $("#var4").on("change", euclid);
 $("#disttype").on("change", euclid);
 
 // load the dataset after everything else is loaded
-$.get("assets/JSON/euclid.txt", function(data){
+$.get("assets/JSON/euclidbig.txt", function(data){
   json = $.parseJSON(data);
   for (var i=0; i<json.length; i++){
     json[i].dist=0;
