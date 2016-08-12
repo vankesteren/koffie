@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <!--
+    Dit laadt alle scripts uit de assets folder. Als alternatief (altijd up-to-date)
+    kun je deze files ook direct van de webservers van de ontwikkelaars halen.
+    -->
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+    <script src="assets/js/math.min.js" type="text/javascript"></script>
+    <script src="assets/js/snap.svg.js" type="text/javascript"></script>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <style>
+      .svginput{
+        border-style: dotted;
+        border-radius: 15px;
+        border-width: 2px;
+        border-color: #66afe9;
+      }
+    </style>
+
+    <!-- Title in the browser header -->
+    <title>Koffie</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <!-- Meest basic navbar. Bekijk vooral voorbeelden voor responsiveness-->
+    <div class="navbar">
+      <div class="container text-primary text-center">
+        <h1 class="text-danger">SVG Testing</h1>
+        <br/>
+      </div>
+    </div>
+    <div class="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3">
+            <svg class="svginput" id="svgwrapper" height=0px width=100%></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="assets/js/snap.js"></script>
+</html>
