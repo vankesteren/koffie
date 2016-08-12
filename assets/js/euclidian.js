@@ -20,7 +20,7 @@ var euclid = function(){
 
   $("#output-block").html("")
     .append("<h1>"+htmltext+closest.name+"</h1>")
-    .append("<p>"+JSON.stringify(closest)+"</p>");
+    .append("<p>"+tbler(closest)+"</p>");
 }
 
 var sortJSON = function(data, key) {
@@ -37,6 +37,21 @@ var randomise = function(){
   $("#var3").val(Math.random() * 10);
   $("#var4").val(Math.random() * 10);
   euclid();
+}
+
+// To make a table from the json output
+var tbler = function(data) {
+    var tbl_body = "";
+    var odd_even = false;
+    $.each(data, function() {
+        var tbl_row = "";
+        $.each(this, function(k , v) {
+            tbl_row += "<td>"+v+"</td>";
+        })
+        tbl_body += "<tr class=\""+( odd_even ? "odd" : "even")+"\">"+tbl_row+"</tr>";
+        odd_even = !odd_even;
+    })
+    return tbl_body;
 }
 
 var json;
