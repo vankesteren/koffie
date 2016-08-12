@@ -6,7 +6,8 @@ var euclid = function(){
 
   for (var i=0; i<json.length; i++){
     var compare = $.map(json[i], function(el) { return(el) }).slice(1,-1);
-    json[i].dist = Math.sqrt(math.dot(input,compare));
+    var diff = math.subtract(input,compare);
+    json[i].dist = Math.sqrt(math.dot(diff,diff));
   }
 
   var closest = sortJSON(json,"dist")[0];
