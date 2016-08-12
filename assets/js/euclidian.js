@@ -6,7 +6,7 @@ var euclid = function(){
 
   var clone = json.slice(0)
 
-  for (var i=0; i<json.length; i++){
+  for (var i=0; i<clone.length; i++){
     var compare = $.map(clone[i], function(el) { return(el) }).slice(1);
     clone[i].dist = Math.sqrt(math.dot(input,compare));
   }
@@ -25,6 +25,7 @@ var sortJSON = function(data, key) {
     });
 }
 
+// Randomise function is bound to button
 var randomise = function(){
   $("#var1").val(Math.random() * 10);
   $("#var2").val(Math.random() * 10);
@@ -34,14 +35,15 @@ var randomise = function(){
 }
 
 var json;
-
 var htmltext = "The closest value to this is: ";
 
+// run the euclid function on any value change
 $("#var1").on("change", euclid);
 $("#var2").on("change", euclid);
 $("#var3").on("change", euclid);
 $("#var4").on("change", euclid);
 
-$.get("assets/JSON/euclid.txt", function(data){
+// load the dataset after everything else is loaded
+$.get("assets/JSON/euclidbig.txt", function(data){
   json = $.parseJSON(data);
 });
